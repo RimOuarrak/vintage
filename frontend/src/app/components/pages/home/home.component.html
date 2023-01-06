@@ -1,0 +1,38 @@
+<ul>
+  <li *ngFor="let gem of gems">
+    <a routerLink="/gem/{{gem.id}}">
+      <img [src]="gem.imageUrl" [alt]="gem.name" />
+      <div class="content">
+        <div class="name">
+          {{gem.name}}
+        </div>
+        <span class="favorite {{gem.favorite?'':'not'}}">
+          ❤
+        </span>
+        <div class="stars">
+          <star-rating [value]="gem.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
+            [readonly]="true">
+          </star-rating>
+        </div>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of gem.origins">
+              {{origin}}
+            </span>
+          </div>
+
+          <div class="time">
+            <span>🕒</span>
+            {{gem.Time}}
+          </div>
+        </div>
+
+        <div class="price">
+          <span>
+            {{gem.price | currency}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
