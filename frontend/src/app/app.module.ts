@@ -8,6 +8,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { RatingModule } from 'ng-starrating';
 import { SearchComponent } from './components/partials/search/search.component';
 import { GemPageComponent } from './components/pages/gem-page/gem-page.component';
+import { TagsComponent } from './components/partials/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { GemPageComponent } from './components/pages/gem-page/gem-page.component
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    GemPageComponent
+    GemPageComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,

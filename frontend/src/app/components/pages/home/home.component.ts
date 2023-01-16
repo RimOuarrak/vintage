@@ -15,6 +15,8 @@ export class HomeComponent {
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
       this.gems = this.gemService.getAllGemsBysearchTerm(params.searchTerm);
+      else if (params.tag)
+      this.gems = this.gemService.getAllGemsByTag(params.tag);
       else
       this.gems = gemService.getAll();
     })

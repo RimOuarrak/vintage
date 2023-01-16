@@ -1,4 +1,5 @@
 import {Gem} from './app/shared/models/Gem';
+import { Tag } from './app/shared/models/Tag';
 
 export const sample_gems: Gem[] =
 [
@@ -70,3 +71,13 @@ export const sample_gems: Gem[] =
 },
 ]
 
+export const sample_tags: Tag[] = [
+  { name: 'All', count: 6 },
+  { name: 'skirt', count: 4 },
+  { name: 'top', count: 2 },
+  { name: 'dress', count: 3 },
+  { name: 'SlowFood', count: 2 },
+  { name: 'gray', count: 1 },
+  { name: 'vintage', count: 1 },
+  { name: 'classic', count: 1 },
+]
