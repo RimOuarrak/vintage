@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 import { GemService } from 'src/app/services/gem.service';
 import { Gem } from 'src/app/shared/models/Gem';
 
@@ -10,7 +11,7 @@ import { Gem } from 'src/app/shared/models/Gem';
 })
 export class GemPageComponent implements OnInit{
   gem!: Gem;
-  constructor(activatedRoute:ActivatedRoute, gemService:GemService) {
+  constructor(activatedRoute:ActivatedRoute, gemService:GemService, private cartService:CartService, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
         this.gem = gemService.getGemById(params.id);
@@ -19,6 +20,11 @@ export class GemPageComponent implements OnInit{
 
   ngOnInit(): void {
     
+  }
+
+  addToCart() {
+    this.cartService.addToCart(this.gem);
+    this.router.navigateByUrl('/cart-page');
   }
 }
 

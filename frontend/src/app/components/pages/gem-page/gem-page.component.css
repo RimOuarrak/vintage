@@ -69,12 +69,12 @@
   }
   
   .tags a{
-    background-color: #f0f0f0;
+    background-color: #faf0db;
     padding: 0.3rem 1rem;
     margin: 0.2rem 0.15rem;
     border-radius: 10rem;
     font-weight: 600;
-    color: blue;
+    color: #895a1c;
   }
   
   .time{
@@ -90,7 +90,7 @@
   .price{
     font-size: 1.8rem;
     margin: 2rem 2rem 2rem 0;
-    color: rgb(91, 184, 91);
+    color: #a6c48ac5;
   }
   
   .price::before{
@@ -100,7 +100,7 @@
   
   button{
     color: white;
-    background: #ff4d82;
+    background: #fea4a4;
     border: none;
     font-size: 1.2rem;
     padding: 1rem;
