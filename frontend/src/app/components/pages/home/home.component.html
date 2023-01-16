@@ -1,3 +1,4 @@
+<app-search></app-search>
 <ul>
   <li *ngFor="let gem of gems">
     <a routerLink="/gem/{{gem.id}}">
@@ -10,7 +11,7 @@
           ❤
         </span>
         <div class="stars">
-          <star-rating [value]="gem.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
+          <star-rating [value]="gem.stars" [totalstars]="5" checkedcolor="#ff4d82" uncheckedcolor="black" size="22px"
             [readonly]="true">
           </star-rating>
         </div>

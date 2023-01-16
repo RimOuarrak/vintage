@@ -12,4 +12,9 @@ export class GemService {
   {
     return sample_gems;
   }
+
+  getAllGemsBysearchTerm(searchTerm:string)
+  {
+    return (this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase())))
+  }
 }
