@@ -1,0 +1,50 @@
+<div class="container">
+    <img [src]="gem.imageUrl" [alt]="gem.name"/>
+  
+    <div class="details">
+      <div class="header">
+        <span class="name">
+          {{gem.name}}
+        </span>
+        <span class="favorite {{gem.favorite? '': 'not'}}">❤</span>
+      </div>
+      <div class="rating">
+        <star-rating
+        [value]="gem.stars"
+        [totalstars]="5"
+        checkedcolor="#ff4d82"
+        uncheckedcolor="black"
+        size="25px"
+        [readonly]="true">
+      </star-rating>
+      </div>
+  
+      <div class="origins">
+        <span *ngFor="let origin of gem.origins">
+          {{origin}}
+        </span>
+      </div>
+  
+      <div class="tags">
+        <a *ngFor="let tag of gem.tags" routerLink="/tag/{{tag}}">
+          {{tag}}
+        </a>
+      </div>
+  
+      <div class="time">
+        <span>
+          The dilevery takes about <strong>{{gem.Time}}</strong> days
+        </span>
+      </div>
+  
+      <div class="price">
+        <span>
+          {{gem.price | currency}}
+        </span>
+      </div>
+  
+      <button>Add To Cart</button>
+  
+    </div>
+
+</div>
