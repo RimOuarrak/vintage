@@ -1,5 +1,9 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found
+[visible]="!gems || !gems.length"
+resetLinkText="Reset Search"
+></app-not-found>
 <ul>
   <li *ngFor="let gem of gems">
     <a routerLink="/gem/{{gem.id}}">
