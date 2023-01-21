@@ -14,7 +14,9 @@ export class GemPageComponent implements OnInit{
   constructor(activatedRoute:ActivatedRoute, gemService:GemService, private cartService:CartService, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
-        this.gem = gemService.getGemById(params.id);
+        gemService.getGemById(params.id).subscribe(serverGem => {
+          this.gem = serverGem;
+        });
     })
   }
 

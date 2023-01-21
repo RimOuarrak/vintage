@@ -10,7 +10,9 @@ import { Tag } from 'src/app/shared/models/Tag';
 export class TagsComponent implements OnInit{
 tags?:Tag[];
 constructor(GemService: GemService) {
-  this.tags = GemService.getAllTags();
+  GemService.getAllTags().subscribe((serverTags) => {
+    this.tags = serverTags;
+  });
 }
 
 ngOnInit(): void {

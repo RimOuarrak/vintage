@@ -1,9 +1,9 @@
 <app-not-found
-[visible]="!gem.id"
+[visible]="!gem"
 notFoundMessage="Item Not Found"
 resetLinkText="Back To Homepage"
 ></app-not-found>
-<div *ngIf="gem.id" class="container">
+<div *ngIf="gem" class="container">
     <img [src]="gem.imageUrl" [alt]="gem.name"/>
     <div class="details">
       <div class="header">

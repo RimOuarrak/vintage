@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { GemService } from 'src/app/services/gem.service';
 import { Gem } from 'src/app/shared/models/Gem';
 
@@ -12,13 +13,19 @@ export class HomeComponent {
 
   gems:Gem[] = [];
   constructor(private gemService:GemService, activatedRoute:ActivatedRoute) {
+    let gemsObservable:Observable<Gem[]>
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
-      this.gems = this.gemService.getAllGemsBysearchTerm(params.searchTerm);
+      gemsObservable = this.gemService.getAllGemsBysearchTerm(params.searchTerm);
       else if (params.tag)
-      this.gems = this.gemService.getAllGemsByTag(params.tag);
+      gemsObservable = this.gemService.getAllGemsByTag(params.tag);
       else
-      this.gems = gemService.getAll();
+      gemsObservable = gemService.getAll();
+
+      gemsObservable.subscribe((serverGems) =>
+      {
+        this.gems = serverGems;
+      })
     })
   }
 }
