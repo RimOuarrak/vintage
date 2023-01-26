@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { sample_gems } from 'src/data';
 import { sample_tags } from 'src/data';
-import { GEMS_BY_SEARCH_URL, GEMS_BY_TAG_URL, GEMS_TAGS_URL, GEMS_URL, GEM_BY_ID_URL } from '../shared/models/constant/urls';
+import { GEMS_BY_SEARCH_URL, GEMS_BY_TAG_URL, GEMS_TAGS, GEMS_URL, GEMS_BY_ID_URL } from '../shared/constants/urls';
 import { Gem } from '../shared/models/Gem';
 import { Tag } from '../shared/models/Tag';
 
@@ -25,7 +25,7 @@ export class GemService {
   }
   
   getAllTags(): Observable<Tag[]> {
-    return this.http.get<Tag[]>(GEMS_TAGS_URL);
+    return this.http.get<Tag[]>(GEMS_TAGS);
   }
 
   getAllGemsByTag(tag: string): Observable<Gem[]> {
@@ -35,7 +35,7 @@ export class GemService {
   }
 
   getGemById(gemId:string):Observable<Gem>{
-    return this.http.get<Gem>(GEM_BY_ID_URL + gemId);
+    return this.http.get<Gem>(GEMS_BY_ID_URL + gemId);
   }
     //??if the previous one is undefined so we do the folowing one
 }
