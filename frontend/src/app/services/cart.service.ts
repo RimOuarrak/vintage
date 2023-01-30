@@ -46,6 +46,10 @@ export class CartService {
     //Observable holds the current value and emits it to any new subscribers as well as to any existing subscribers when the value changes
   }
 
+  getCart(): Cart{
+    return this.cartSubject.value;
+  }
+  
   private setCartToLocalStorage():void {
     this.cart.totalPrice = this.cart.items.reduce((prevSum, currentItem) => prevSum + currentItem.price, 0)
     this.cart.totalCount = this.cart.items.reduce((prevSum, currentItem) => prevSum + currentItem.quantity, 0)
