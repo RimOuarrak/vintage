@@ -74,7 +74,6 @@ export const sample_tags: any[] = [
   { name: 'skirt', count: 4 },
   { name: 'top', count: 2 },
   { name: 'dress', count: 3 },
-  { name: 'SlowFood', count: 2 },
   { name: 'gray', count: 1 },
   { name: 'vintage', count: 1 },
   { name: 'classic', count: 1 },
